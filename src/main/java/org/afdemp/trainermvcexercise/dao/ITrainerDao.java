@@ -18,6 +18,6 @@ public interface ITrainerDao {
      public Trainer findTrainerById(int id);
      public boolean save(Trainer trainer);
      public boolean delete(int id);
-     //public boolean updateTrainer(Trainer trainer);
+     public boolean updateTrainer(Trainer trainer);
     
 }

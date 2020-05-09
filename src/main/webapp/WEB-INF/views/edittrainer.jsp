@@ -8,24 +8,31 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
-    <head>
+<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <title>Trainer Edit</title>
     </head>
     <body>
-        <h1>Edit a Trainer</h1>
-        <form:form method="POST" modelAttribute="trainer">
-            <form:input type="hidden" path="id" id="id"/>
-            First Name: <form:input path="firstName" />
-            <br/>
-            Last Name: <form:input path="lastName" />
-            <br/>
-            Subject : <form:input path="subject" />
-            <br/>            
-            <input type="submit" value="Click to Update Trainer">
-        </form:form>
-        <div id="msg">${message}</div>
-        <div id="list"><a href="<c:url value='/${listurl}' />">Click to go back to the list of Trainers</a></div>
+        <div class="container mt-5">
+            <h1 class="text-center">Edit a Trainer</h1>
+            <form:form method="POST" modelAttribute="trainer">
+                <div class="form-group mt-2 p-3 border rounded">
+                    <form:input type="hidden" path="id" id="id" class="form-control"/>
+                    First Name: <form:input path="firstName" class="form-control"/>
+                    <br/>
+                    Last Name: <form:input path="lastName" class="form-control"/>
+                    <br/>
+                    Subject : <form:input path="subject" class="form-control"/>
+                    <br/>            
+                    <input type="submit" value="Click to Update" class="btn btn-warning">
+                </form:form>
+                <div id="msg">${message}</div>                
+            </div>
+            <div id="list" class="row justify-content-center"><a href="<c:url value='/${listurl}' />" class="btn btn-primary col-4">
+                    Click to go back to the list of Trainers</a>
+            </div>
+        </div>
     </body>
 </html>

@@ -46,15 +46,7 @@ public class TrainerServiceImpl implements ITrainerService {
     
     @Override
     public boolean updateTrainer(Trainer trainer) {
-        //return dao.updateTrainer(trainer);
-		Trainer entity = dao.findTrainerById(trainer.getId());
-		if(entity!=null){
-			entity.setFirstName(trainer.getFirstName());
-			entity.setLastName(trainer.getLastName());
-			entity.setSubject(trainer.getSubject());
-                        return true;
-		}
-                return false;
+        return dao.updateTrainer(trainer);		
 	}
 
 }

@@ -50,14 +50,16 @@ public class TrainerDaoImpl extends AbstractDao<Integer, Trainer> implements ITr
         return getByKey(id);
     }
 
-//    @Override
-//    public boolean updateTrainer(Trainer trainer) {
-//        Trainer entity = findTrainerById(trainer.getId());
-//        if (entity != null) {
-//            update(entity);
-//            return true;
-//        }
-//        return false;
-//    }
+    @Override
+    public boolean updateTrainer(Trainer trainer) {
+        Trainer t = findTrainerById(trainer.getId());
+        if (t != null) {
+            t.setFirstName(trainer.getFirstName());
+            t.setLastName(trainer.getLastName());
+            t.setSubject(trainer.getSubject());
+            return save(t);
+        }
+        return false;
+    }
 
 }

@@ -64,12 +64,12 @@ public class TrainerController {
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String saveTrainer(ModelMap view, Trainer trainer) {
         if (trainerService.save(trainer)) {
-            view.addAttribute("message", new String("Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " has been registered successfully."));
+            view.addAttribute("msg", new String("Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " has been registered successfully."));
         } else {
-            view.addAttribute("message", new String("Something went wrong, trainer not registered."));
+            view.addAttribute("msg", new String("Something went wrong, trainer not registered."));
         }
         view.addAttribute("listurl", listurl);
-        return ("registertrainer");
+        return ("redirect:/list");
     }
 
     // delete for an existing student

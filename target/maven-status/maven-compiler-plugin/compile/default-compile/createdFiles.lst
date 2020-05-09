@@ -1,0 +1,11 @@
+org\afdemp\trainermvcexercise\controllers\TrainerController.class
+org\afdemp\trainermvcexercise\dao\ITrainerDao.class
+org\afdemp\trainermvcexercise\entities\Trainer.class
+org\afdemp\trainermvcexercise\configuration\AppConfig.class
+org\afdemp\trainermvcexercise\configuration\AppInitializer.class
+org\afdemp\trainermvcexercise\dao\AbstractDao.class
+org\afdemp\trainermvcexercise\entities\Trainer_.class
+org\afdemp\trainermvcexercise\services\TrainerServiceImpl.class
+org\afdemp\trainermvcexercise\configuration\HibernateConfiguration.class
+org\afdemp\trainermvcexercise\services\ITrainerService.class
+org\afdemp\trainermvcexercise\dao\TrainerDaoImpl.class

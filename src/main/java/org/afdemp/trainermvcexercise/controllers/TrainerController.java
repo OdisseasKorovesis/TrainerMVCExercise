@@ -105,9 +105,7 @@ public class TrainerController {
             view.addAttribute(view.addAttribute("msg", "Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " updated successfully"));
         } else {
             view.addAttribute(view.addAttribute("msg", "Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " could not updated"));
-        }
-
-        //view.addAttribute("msg", "Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " updated successfully");
+        }        
         return "redirect:/list";
     }
 

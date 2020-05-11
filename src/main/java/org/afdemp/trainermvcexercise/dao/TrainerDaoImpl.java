@@ -26,8 +26,8 @@ public class TrainerDaoImpl extends AbstractDao<Integer, Trainer> implements ITr
 
     @Override
     public boolean save(Trainer trainer) {
-        boolean notSaved = persist(trainer);
-        if (notSaved) {
+        boolean Saved = persist(trainer);
+        if (!Saved) {
             return false;
         }
         return true;

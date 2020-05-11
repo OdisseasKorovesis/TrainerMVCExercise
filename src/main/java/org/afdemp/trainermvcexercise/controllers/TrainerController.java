@@ -62,7 +62,11 @@ public class TrainerController {
 
     // post form for new student
     @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public String saveTrainer(ModelMap view, Trainer trainer) {
+    public String saveTrainer(ModelMap view, @Valid Trainer trainer, BindingResult result) {
+        if (result.hasErrors()) {
+            return "registertrainer";
+        }
+
         if (trainerService.save(trainer)) {
             view.addAttribute("msg", new String("Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " has been registered successfully."));
         } else {
@@ -91,15 +95,19 @@ public class TrainerController {
     }
 
     @RequestMapping(value = {"/edit/{id}"}, method = RequestMethod.POST)
-    public String updateTrainer(Trainer trainer, ModelMap view, @PathVariable int id) {
+    public String updateTrainer(@Valid Trainer trainer, BindingResult result, ModelMap view, @PathVariable int id) {
+
+        if (result.hasErrors()) {
+            return "edittrainer";
+        }
 
         if (trainerService.updateTrainer(trainer)) {
             view.addAttribute(view.addAttribute("msg", "Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " updated successfully"));
         } else {
             view.addAttribute(view.addAttribute("msg", "Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " could not updated"));
-        }     
+        }
 
-        view.addAttribute("msg", "Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " updated successfully");
+        //view.addAttribute("msg", "Trainer " + trainer.getFirstName() + " " + trainer.getLastName() + " updated successfully");
         return "redirect:/list";
     }
 

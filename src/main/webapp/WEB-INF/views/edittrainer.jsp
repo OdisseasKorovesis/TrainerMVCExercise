@@ -20,15 +20,18 @@
             <form:form method="POST" modelAttribute="trainer">
                 <div class="form-group mt-2 p-3 border rounded">
                     <form:input type="hidden" path="id" id="id" class="form-control"/>
-                    First Name: <form:input path="firstName" class="form-control"/>
+                    First Name: <form:input path="firstName" class="form-control"  maxlength="45" required="true"/>
+                    <form:errors path="firstName" cssClass="error"/>
                     <br/>
-                    Last Name: <form:input path="lastName" class="form-control"/>
+                    Last Name: <form:input path="lastName" class="form-control"  maxlength="45" required="true"/>
+                    <form:errors path="lastName" cssClass="error"/>
                     <br/>
-                    Subject : <form:input path="subject" class="form-control"/>
+                    Subject : <form:input path="subject" class="form-control"  maxlength="45" required="true"/>
+                    <form:errors path="subject" cssClass="error"/>
                     <br/>            
                     <input type="submit" value="Click to Update" class="btn btn-warning">
                 </form:form>
-                <div id="msg">${message}</div>                
+<!--                <div id="msg">${message}</div>                -->
             </div>
             <div id="list" class="row justify-content-center"><a href="<c:url value='/${listurl}' />" class="btn btn-primary col-4">
                     Click to go back to the list of Trainers</a>

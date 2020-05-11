@@ -21,11 +21,14 @@
             <form:form method="POST" modelAttribute="trainer">
                 <div class="form-group mt-2 p-3 border rounded">
                     <form:input type="hidden" path="id" id="id" class="form-control"/>
-                    First Name: <form:input path="firstName" class="form-control" placeholder="Enter trainer first name"/>
+                    First Name: <form:input path="firstName" class="form-control" placeholder="Enter trainer first name" maxlength="45" required="true"/>
+                    <form:errors path="firstName" cssClass="error"/>
                     <br/>
-                    Last Name: <form:input path="lastName" class="form-control" placeholder="Enter trainer last name"/>
+                    Last Name: <form:input path="lastName" class="form-control" placeholder="Enter trainer last name" maxlength="45" required="true"/>
+                    <form:errors path="lastName" cssClass="error"/>
                     <br/>
-                    Subject : <form:input path="subject" class="form-control" placeholder="Enter trainer subject"/>
+                    Subject : <form:input path="subject" class="form-control" placeholder="Enter trainer subject" maxlength="45" required="true"/>
+                    <form:errors path="subject" cssClass="error"/>
                     <br/>            
                     <input type="submit" value="Click to Register" class="btn btn-warning">
                 </form:form>
